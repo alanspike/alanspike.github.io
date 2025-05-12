@@ -330,6 +330,55 @@
                 margin: 0;
                 display: block;
             }
+
+            /* Allow horizontal scrolling for publication content */
+            .publication td:last-child {
+                max-height: none;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+                text-align: left;
+                padding-right: 5px;
+                white-space: normal;
+                width: 70% !important;
+            }
+            
+            /* Style the scrollbar for better visibility */
+            .publication td:last-child::-webkit-scrollbar {
+                height: 4px;
+            }
+            
+            .publication td:last-child::-webkit-scrollbar-thumb {
+                background-color: var(--primary-color);
+                border-radius: 4px;
+            }
+            
+            /* Fix for long titles and URLs that might break layout */
+            .publication a b {
+                word-break: normal;
+                overflow-wrap: anywhere;
+                hyphens: auto;
+            }
+            
+            /* Make images maintain aspect ratio but not overflow */
+            .publication img {
+                max-width: 100%;
+                object-fit: contain;
+            }
+            
+            /* Allow horizontal scrolling for paper links if too many */
+            .paper {
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                padding-bottom: 8px;
+                scrollbar-width: thin;
+            }
+            
+            /* Prevent forward slashes between links from wrapping */
+            .paper a::after {
+                white-space: nowrap;
+            }
         }
         
         /* Fix tap target sizes for better mobile usability */
