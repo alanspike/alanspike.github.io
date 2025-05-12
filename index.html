@@ -1,19 +1,165 @@
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <link rel="shortcut icon" type="image/x-icon" href="images/head.png" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jian Ren's Personal Academic Website">
 
     <title>Jian Ren</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" as="style">
+    
+    <!-- Modern CSS framework - minimal version -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Custom styles for modernization -->
+    <style>
+        :root {
+            --primary-color: #1772d0;
+            --accent-color: #f09228;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --container-bg: #ffffff;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-top: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            background-color: var(--container-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            padding: 30px;
+            margin-bottom: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .container:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+        
+        h2 {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            bottom: 0;
+            left: 0;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        a:hover {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        
+        .publication {
+            margin-bottom: 25px;
+        }
+        
+        .publication img {
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .publication img:hover {
+            transform: scale(1.03);
+        }
+        
+        .paper a {
+            padding: 4px 8px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            margin-right: 5px;
+            font-size: 0.9em;
+            display: inline-block;
+            margin-top: 5px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .paper a:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            transition: transform 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-3px);
+        }
+        
+        hr {
+            margin: 25px 0;
+            background-color: rgba(0,0,0,0.1);
+        }
+        
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin-bottom: 15px;
+            }
+            
+            .publication td {
+                display: block;
+                width: 100% !important;
+                text-align: center;
+            }
+            
+            .publication td:first-child {
+                margin-bottom: 15px;
+            }
+            
+            .publication td:last-child {
+                text-align: left;
+            }
+        }
+        
+        /* Fix for media coverage section alignment */
+        .media-coverage-section h3,
+        .media-coverage-section p {
+            text-align: left !important;
+        }
+    </style>
 
     <script type="text/javascript">
-
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-40545479-1']);
         _gaq.push(['_trackPageview']);
@@ -23,60 +169,135 @@
             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
-
     </script>
-
-
 </head>
 
 <body>
     <div class="container">
-        <table width="900" border="0" align="center" cellpadding="20">
-            <table width="90%" align="center" border="0" cellpadding="10">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <h1 class="text-center mb-4">Jian Ren</h1>
+                
+                <div class="social-links">
+                    <a href="mailto:renjianustc@gmail.com" target="_blank"><img src="icons/email.png" height="24" alt="Email"></a>
+                    <a href="https://www.linkedin.com/in/renjian0905" target="_blank"><img src="icons/linkedin.png" height="24" alt="LinkedIn"></a>
+                    <a href="https://scholar.google.com/citations?user=vDALiU4AAAAJ&hl=en&authuser=1" target="_blank"><img src="icons/google_scholar.png" height="24" alt="Google Scholar"></a>
+                    <a href="https://github.com/alanspike/" target="_blank"><img src="icons/github.png" height="24" alt="GitHub"></a>
+                    <a href="https://twitter.com/JianRen_" target="_blank"><img src="icons/twitter.png" height="24" alt="Twitter"></a>
+                </div>
+                
+                <div class="text-center mb-4">
+                    <iframe src="https://giphy.com/embed/Mah9dFWo1WZX0WM62Q" width="200" frameBorder="0" class="giphy-embed" allowFullScreen loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container media-coverage-section">
+        <h3 class="mb-3">Selected Media Coverage</h3>
+        <div class="row">
+            <div class="col-12">
+                <p><strong>Image Generation Models:</strong> TechCrunch (<a href="https://techcrunch.com/2025/02/04/snap-unveils-ai-text-to-image-model-for-mobile-devices/">1</a>, <a href="https://techcrunch.com/2024/06/18/snap-previews-its-real-time-image-model-that-can-generate-ar-experiences/">2</a>), <a href="https://www.theverge.com/2024/6/19/24181965/snapchat-ai-prompt-custom-lens">The Verge</a>, Snap Newsroom (<a href="https://newsroom.snap.com/ai-text-to-image-model-for-mobile-devices">1</a>, <a href="https://newsroom.snap.com/new-ar-experiences-powered-by-gen-ai">2</a>)</p>
+                <p><strong>3D Generation and Rendering:</strong> <a href="https://www.youtube.com/watch?v=v5tdnx4yz80">YouTube</a>, <a href="https://www.reuters.com/technology/snap-launches-ai-tools-advanced-augmented-reality-2024-06-18/">Reuters</a></p>
+                <p><strong>Video Generation Models:</strong> TechCrunch (<a href="https://techcrunch.com/2024/09/17/snap-is-introducing-an-ai-video-generation-tool-for-creators/">1</a>, <a href="https://techcrunch.com/2025/03/12/snap-introduces-ai-video-lenses-powered-by-its-in-house-generative-model/">2</a>)</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>2025</h2>
+
+        <div class="publication">
+            <table width="100%" border="0" cellpadding="0">
                 <tr>
-                    <td width="100%" valign="top">
-                        <p align="center">&nbsp;</p>
-
-                        <p align="center">
-                            <font size="6px">Jian Ren</font><br>
-                        </p>
-
-                        <p>
-                            <!-- I lead a research team at Snap Inc. Our team works on <strong>Efficient AI</strong> and <strong>Generative AI</strong>, building image, video, and 3D rendering models. <br> -->
-
-                            <!-- <strong>We are currently hiring Research Scientists, please reach out if you are interested.</strong> -->
-                            <!-- Before joining Snap Inc.,
-                            I got a Ph.D. at <a href="https://www.rutgers.edu/">Rutgers
-                                University</a> under the supervision of <a
-                                href="https://gemini.cinj.rutgers.edu/rutgers-people/david-j-foran-phd/">
-                                David J. Foran</a>
-                            and <a href="http://manishparashar.org/"> Manish Parashar</a> in 2019,
-                            and a B.S. from <a href="http://en.ustc.edu.cn/">USTC</a>
-                            in 2014. -->
-
-                        <p> <a href="mailto:renjianustc@gmail.com" target="_blank"><img src="icons/email.png"
-                                    height="24"></a> &nbsp&nbsp
-                            <a href="https://www.linkedin.com/in/renjian0905" target="_blank"><img
-                                    src="icons/linkedin.png" height="24"></a> &nbsp&nbsp
-                            <a href="https://scholar.google.com/citations?user=vDALiU4AAAAJ&hl=en&authuser=1"
-                                target="_blank"><img src="icons/google_scholar.png" height="24"></a> &nbsp&nbsp
-                            <a href="https://github.com/alanspike/" target="_blank"><img src="icons/github.png"
-                                    height="24"></a> &nbsp&nbsp
-                            <a href="https://twitter.com/JianRen_" target="_blank"><img src="icons/twitter.png"
-                                    height="24"></a>
-                        </p>
-
-                        <iframe src="https://giphy.com/embed/Mah9dFWo1WZX0WM62Q" width="200"  style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p></p>
-
-                    </td>
-                    <!-- <td width="50%" height="50%">
-                        <div class="instructorphoto">
-                            <img src="images/head.png">
+                    <td width="40%" valign="center"><img src="images/publication_snapgen.png" alt="SnapGen" width="180" 
+                        style="border-style: none" loading="lazy"></td>
+                    <td width="60%" valign="top">
+                        <p><a href="https://snap-research.github.io/snapgen/"><b>
+                            SnapGen: Taming High-Resolution Text-to-Image Models for Mobile Devices with Efficient Architectures and Training
+                                </b></a><br>
+                                Dongting Hu, Jierun Chen, Xijie Huang, Huseyin Coskun, Arpit Sahni, Aarush Gupta, Anujraaj Goyal, Dishani Lahiri, Rajesh Singh, Yerlan Idelbayev, Junli Cao, Yanyu Li, Kwang-Ting Cheng, S.-H. Gary Chan, Mingming Gong, Sergey Tulyakov, Anil Kag, Yanwu Xu,  <strong>Jian Ren</strong>
+                            <br>
+                            <em>CVPR</em>, 2025  <strong>(Highlight)</strong><br>
+                        <div class="paper">
+                            <a href="https://snap-research.github.io/snapgen/">Project</a>
+                            <a href="https://arxiv.org/abs/2412.09619">arXiv</a>
+                            <a href="https://arxiv.org/pdf/2412.09619">PDF</a>
                         </div>
-                    </td> -->
+                    </td>
                 </tr>
             </table>
-        </table>
+        </div>
+        <hr>
+
+        <div class="publication">
+            <table width="900" align="center" border="0" cellpadding="0">
+                <td width="40%" valign="center"><img src="images/wonderland.gif" alt="game" width="190" 
+                        style="border-style: none">
+                <td width="60%" valign="top">
+                    <p><a href="https://snap-research.github.io/wonderland/"><b>
+                        Wonderland: Navigating 3D Scenes from a Single Image
+                    </b></a><br>
+                            Hanwen Liang, Junli Cao, Vidit Goel, Guocheng Qian, Sergei Korolev, Demetri Terzopoulos, Konstantinos N. Plataniotis, Sergey Tulyakov, 
+                            <strong>Jian Ren</strong>
+                        <br>
+                        <em>CVPR</em>, 2025<br>
+                    <div class="paper">
+                        <a href="https://snap-research.github.io/wonderland/">Project</a> /
+                        <a href="https://arxiv.org/abs/2412.12091">arXiv</a> /
+                        <a href="https://arxiv.org/pdf/2412.12091">PDF</a>
+                    </div>
+                </td>
+                </td>
+            </table>
+        </div>
+        <hr>
+
+        <div class="publication">
+            <table width="900" align="center" border="0" cellpadding="0">
+                <td width="40%" valign="center"><img src="images/snapgen-v-pipeline.png" alt="game" width="190" 
+                        style="border-style: none">
+                <td width="60%" valign="top">
+                    <p><a href="https://snap-research.github.io/snapgen-v/"><b>
+                        SnapGen-V: Generating a Five-Second Video within Five Seconds on a Mobile Device
+                            </b></a><br>
+                            Yushu Wu, Zhixing Zhang, Yanyu Li, Yanwu Xu, Anil Kag, Yang Sui, Huseyin Coskun, Ke Ma, Aleksei Lebedev, Ju Hu, Dimitris Metaxas, Yanzhi Wang, Sergey Tulyakov, <strong>Jian Ren</strong>
+
+                            
+                        <br>
+                        <em>CVPR</em>, 2025<br>
+                    <div class="paper">
+                        <a href="https://snap-research.github.io/snapgen-v/">Project</a> /
+                        <a href="https://arxiv.org/abs/2412.10494">arXiv</a> /
+                        <a href="https://arxiv.org/pdf/2412.10494">PDF</a>
+                    </div>
+                </td>
+                </td>
+            </table>
+        </div>
+        <hr>
+
+
+        <div class="publication">
+            <table width="900" align="center" border="0" cellpadding="0">
+                <td width="40%" valign="center"><img src="images/lightweight-gs.jpg" alt="game" width="190" 
+                        style="border-style: none">
+                <td width="60%" valign="top">
+                    <p><a href="https://arxiv.org/abs/2406.19434"><b>
+                        Lightweight Predictive 3D Gaussian Splats
+                            </b></a><br>
+                            Junli Cao, Vidit Goel, Chaoyang Wang, Anil Kag, Ju Hu, Sergei Korolev, <br> Chenfanfu Jiang, Sergey Tulyakov,  <strong>Jian Ren</strong>                           
+                        <br>
+                        <em>ICLR</em>, 2025<br>
+                    <div class="paper">
+                        <a href="https://arxiv.org/abs/2406.19434">arXiv</a> /
+                        <a href="https://arxiv.org/pdf/2406.19434">PDF</a>
+                    </div>
+                </td>
+                </td>
+            </table>
+        </div>
+
     </div>
     <br>
 
@@ -989,15 +1210,27 @@
             </table>
         </div>
         <hr> -->
-        <p style="text-align:right;"> <a href="https://gkioxari.github.io/">Webpage Credits</a></p>
     </div>
     <br>
 
 
 
 
-    <script xml:space="preserve" language="JavaScript">
-        hideallbibs();
+    <script>
+        // Add lazy loading to all images for better performance
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img:not([loading])');
+            images.forEach(img => {
+                img.setAttribute('loading', 'lazy');
+            });
+        });
+        
+        // This function was called in the original code, but not defined
+        // Adding a placeholder definition to prevent errors
+        function hideallbibs() {
+            // Placeholder function
+            console.log('hideallbibs function called');
+        }
     </script>
 
 
