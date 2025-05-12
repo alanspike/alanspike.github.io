@@ -184,44 +184,67 @@
                 font-size: 18px;
             }
             
-            .publication table {
-                display: block;
-                width: 100%;
-            }
-            
-            .publication tr {
-                display: flex;
-                flex-direction: column;
-            }
-            
+            /* Completely revamp publication tables for mobile */
+            .publication table,
+            .publication tr,
             .publication td {
                 display: block;
                 width: 100% !important;
-                padding: 5px 0;
+            }
+            
+            .publication table {
+                margin-bottom: 20px;
+            }
+            
+            .publication td {
+                padding: 0;
+                margin-bottom: 15px;
             }
             
             .publication td:first-child {
                 text-align: center;
-                margin-bottom: 10px;
+                max-width: 100%;
             }
             
             .publication img {
-                max-width: 80%;
+                max-width: 70%;
                 height: auto;
+                margin: 0 auto 10px;
+                display: block;
+            }
+            
+            /* Paper links improvement for mobile */
+            .paper {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                gap: 8px;
+                margin-top: 10px;
             }
             
             .paper a {
                 display: inline-block;
-                margin: 5px 3px;
-                padding: 8px 12px; /* Bigger tap targets */
+                margin: 0;
+                padding: 8px 12px;
+                font-size: 13px;
+                flex-grow: 0;
+                min-height: 44px;
+                display: flex;
+                align-items: center;
             }
             
-            .social-links {
-                gap: 20px; /* More space between social icons for easier tapping */
+            /* Text adjustments for better readability */
+            .publication p {
+                font-size: 14px;
+                line-height: 1.5;
+                margin-bottom: 8px;
             }
             
-            .social-links a img {
-                height: 28px; /* Slightly larger icons for better tappability */
+            .publication b {
+                font-size: 15px;
+                line-height: 1.4;
+                display: block;
+                margin-bottom: 6px;
             }
         }
         
