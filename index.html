@@ -238,13 +238,97 @@
                 font-size: 14px;
                 line-height: 1.5;
                 margin-bottom: 8px;
+                word-wrap: break-word;
+                hyphens: auto;
+                overflow-wrap: break-word;
             }
             
-            .publication b {
+            .publication a b {
                 font-size: 15px;
                 line-height: 1.4;
                 display: block;
                 margin-bottom: 6px;
+                /* Add better wrapping for long titles */
+                word-break: break-word;
+                hyphens: auto;
+            }
+            
+            /* Handle long author lists better */
+            .publication p br {
+                display: none; /* Remove line breaks in author lists */
+            }
+            
+            /* Make authors more compact */
+            .publication p strong {
+                white-space: normal;
+            }
+            
+            /* Add custom scrolling for extremely long titles that still overflow */
+            .publication td:last-child {
+                max-height: none;
+                overflow-x: hidden;
+                text-align: left;
+                padding-right: 5px;
+            }
+            
+            /* Adjust paper links to be more compact on mobile */
+            .paper {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                gap: 5px;
+                margin-top: 10px;
+            }
+            
+            /* Remove forward slashes between links for more space */
+            .paper a::after {
+                content: none;
+            }
+            
+            /* Make conference name and publication year more visible */
+            .publication em {
+                font-weight: 500;
+                color: var(--primary-color);
+            }
+
+            /* Create a flexbox layout for publications on mobile */
+            .publication table {
+                display: table;
+                margin-bottom: 20px;
+                table-layout: fixed;
+            }
+            
+            .publication tr {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+            }
+            
+            .publication td {
+                padding: 0;
+            }
+            
+            .publication td:first-child {
+                display: flex;
+                width: 30% !important;
+                justify-content: center;
+                align-items: flex-start;
+                padding-right: 8px;
+                text-align: center;
+            }
+            
+            .publication td:last-child {
+                display: block;
+                width: 70% !important;
+                text-align: left;
+                padding-left: 5px;
+            }
+            
+            .publication img {
+                max-width: 100%;
+                height: auto;
+                margin: 0;
+                display: block;
             }
         }
         
